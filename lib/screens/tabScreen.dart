@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_social_network_ui_concept/screens/homeScreen.dart';
 import 'package:flutter_social_network_ui_concept/screens/messagesScreen.dart';
 import 'package:flutter_social_network_ui_concept/screens/profileScreen.dart';
-import 'package:flutter_social_network_ui_concept/widgets/menuDrawer.dart';
 import 'package:flutter_social_network_ui_concept/widgets/topAppBar.dart';
 import 'package:flutter_social_network_ui_concept/widgets/floatingBottomAppBar.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -47,14 +46,12 @@ class _TabScreenState extends State<TabScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       extendBody: true,
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: TopAppBar(pageTitle: _pageTitle, currentPage: _currentPage, setCurrentPage: setCurrentPage),
-      bottomNavigationBar: kIsWeb ? Container() : FloatingBottomAppBar(currentPage: _currentPage, setCurrentPage: setCurrentPage),
+      bottomNavigationBar: kIsWeb ? null : FloatingBottomAppBar(currentPage: _currentPage, setCurrentPage: setCurrentPage),
       body: _body(),
-      endDrawer: kIsWeb && size.width < 700 ? MenuDrawer(currentPage: _currentPage, setCurrentPage: setCurrentPage,) : null,
     );
   }
 

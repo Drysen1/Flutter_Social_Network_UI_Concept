@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_social_network_ui_concept/widgets/fullNavbarItem.dart';
+import 'package:flutter_social_network_ui_concept/widgets/navbarItem.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
@@ -40,11 +40,11 @@ class _TopAppBarState extends State<TopAppBar> {
 
   List<Widget> _appBarActions(){
     List<Widget> appbarActions = [];
-    var size = MediaQuery.of(context).size;
-    if(kIsWeb && size.width > 700){
-      appbarActions.add(FullNavbarItem(title: "Home", icon: Icons.home_max, pageIndex: 0, currentPage: this.widget.currentPage, isDrawer: false, setCurrentPage: this.widget.setCurrentPage));
-      appbarActions.add(FullNavbarItem(title: "Messages", icon: Icons.messenger_outline_rounded, pageIndex: 1, currentPage: this.widget.currentPage, isDrawer: false, setCurrentPage: this.widget.setCurrentPage));
-      appbarActions.add(FullNavbarItem(title: "Profile", icon: Icons.person, pageIndex: 2, currentPage: this.widget.currentPage, isDrawer: false, setCurrentPage: this.widget.setCurrentPage));
+    if(kIsWeb){
+      appbarActions.add(NavbarItem(icon: Icons.home_max, pageIndex: 0, currentPage: this.widget.currentPage, isDrawer: false, setCurrentPage: this.widget.setCurrentPage));
+      appbarActions.add(NavbarItem(icon: Icons.messenger_outline_rounded, pageIndex: 1, currentPage: this.widget.currentPage, isDrawer: false, setCurrentPage: this.widget.setCurrentPage));
+      appbarActions.add(NavbarItem(icon: Icons.person, pageIndex: 2, currentPage: this.widget.currentPage, isDrawer: false, setCurrentPage: this.widget.setCurrentPage));
+      appbarActions.add(Container(width: 7));
     }
     return appbarActions;
   }
