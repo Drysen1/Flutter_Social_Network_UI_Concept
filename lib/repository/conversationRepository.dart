@@ -5,6 +5,7 @@ import 'package:flutter_social_network_ui_concept/models/conversationReplyModel.
 class ConversationRepository {
   var _longMessageString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
   var _shortMessageString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+  var _reallyShortMessageString = "Lorem ipsum dolor sit amet.";
   var _profileImage = 'assets/images/profileImage.png';
   var _janeDoe = "Jane Doe";
   var _johnDoe = "John Doe";
@@ -45,8 +46,8 @@ class ConversationRepository {
 
   ConversationModel _createConversation(int id, String username, bool isUnread){
     var status = isUnread ? ConversationStatus.unread : ConversationStatus.read;
-    
-    return ConversationModel(id, username, _profileImage, _longMessageString, DateTime.now().add(Duration(days: -id)), status);
+    var message = id % 3 == 0 ? _longMessageString : _reallyShortMessageString;
+    return ConversationModel(id, username, _profileImage, message, DateTime.now().add(Duration(days: -id)), status);
   }
 
   ConversationReplyModel _createReply(int id, int conversationid, int userId, String username){
