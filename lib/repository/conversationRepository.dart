@@ -4,8 +4,8 @@ import 'package:flutter_social_network_ui_concept/models/conversationReplyModel.
 
 class ConversationRepository {
   var _longMessageString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-  var _shortMessageString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-  var _reallyShortMessageString = "Lorem ipsum dolor sit amet.";
+  var _shortMessageString = "sed do eiusmod tempor incididunt ut labore et dolore magna";
+  var _reallyShortMessageString = "Consectetur adipiscing elit.";
   var _profileImage = 'assets/images/profileImage.png';
   var _janeDoe = "Jane Doe";
   var _johnDoe = "John Doe";

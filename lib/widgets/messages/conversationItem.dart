@@ -14,10 +14,20 @@ class ConversationItem extends StatefulWidget {
 class _ConversationItemState extends State<ConversationItem> {
   @override
   Widget build(BuildContext context) {
+    return InkWell(
+      splashColor: Theme.of(context).primaryColor,
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
+        child: _listTile()
+      ),
+      onTap: (){}
+    );
+  }
+
+  Widget _listTile(){
     return ListTile(
       dense: false,
-      contentPadding: EdgeInsets.fromLTRB(10, 15, 10, 15),
-      onTap: (){},
       leading: Container( 
         width: 55, 
         height: 55, 
@@ -27,6 +37,7 @@ class _ConversationItemState extends State<ConversationItem> {
       subtitle: _messageText()
     );
   }
+
 
   Widget _nameText(){
     return Padding(
