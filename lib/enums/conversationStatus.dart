@@ -1,0 +1,4 @@
+enum ConversationStatus {
+  unread,
+  read
+}

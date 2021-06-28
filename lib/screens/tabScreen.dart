@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/home/home_bloc.dart';
 import 'package:flutter_social_network_ui_concept/screens/homeScreen.dart';
 import 'package:flutter_social_network_ui_concept/screens/messagesScreen.dart';
@@ -30,7 +31,7 @@ class _TabScreenState extends State<TabScreen> {
     setState(() {    
       switch(pageIndex){
         case 1:{
-          _pageTitle = "Messages";
+          _pageTitle = "Chats";
             break;
         }
         case 2:{
@@ -67,7 +68,8 @@ class _TabScreenState extends State<TabScreen> {
           create: (context) => HomeBloc(),
           child: HomeScreen()
         ),
-        MessagesScreen(),
+        BlocProvider(create: (context) => ConverationsBloc(),
+        child: MessagesScreen()),
         ProfileScreen()
       ],
       onPageChanged: (int pageIndex){

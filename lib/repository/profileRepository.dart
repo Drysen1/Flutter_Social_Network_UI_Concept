@@ -9,8 +9,10 @@ class ProfileRepository {
  
     for( var i = 0 ; i < 30; i++ ) { 
       if(i % 2 == 0){
+        janeDoe.id = i;
         profiles.add(janeDoe);
       } else {
+        johnDoe.id = i;
         profiles.add(johnDoe);
       }
     } 
