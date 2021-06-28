@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_social_network_ui_concept/blocs/home/home_bloc.dart';
 import 'package:flutter_social_network_ui_concept/screens/homeScreen.dart';
 import 'package:flutter_social_network_ui_concept/screens/messagesScreen.dart';
 import 'package:flutter_social_network_ui_concept/screens/profileScreen.dart';
@@ -61,7 +63,10 @@ class _TabScreenState extends State<TabScreen> {
       physics: NeverScrollableScrollPhysics(),
       scrollDirection: Axis.horizontal,
       children: [
-        HomeScreen(),
+        BlocProvider(
+          create: (context) => HomeBloc(),
+          child: HomeScreen()
+        ),
         MessagesScreen(),
         ProfileScreen()
       ],

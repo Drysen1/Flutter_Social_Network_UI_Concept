@@ -31,7 +31,7 @@ class _FloatingBottomAppBarState extends State<FloatingBottomAppBar> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: Colors.white.withOpacity(0.1),
+        color: Color.fromARGB(255, 46, 46, 46).withOpacity(0.9)
       ),
       height: 60,
       width: 340,
