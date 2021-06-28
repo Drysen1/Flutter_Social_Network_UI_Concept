@@ -13,7 +13,7 @@ class ConversationRepository {
   List<ConversationModel> getConversations(){
     List<ConversationModel> conversations = [];
 
-    for( var i = 0 ; i < 10; i++ ) { 
+    for( var i = 0 ; i < 4; i++ ) { 
       var isUnread = false;
 
       if(i % 7 == 0){
