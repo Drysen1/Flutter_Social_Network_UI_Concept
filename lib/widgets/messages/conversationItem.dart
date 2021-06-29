@@ -18,23 +18,31 @@ class _ConversationItemState extends State<ConversationItem> {
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(20),
       child: Container(
-        padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
-        child: _listTile()
+        padding: EdgeInsets.fromLTRB(16, 20, 16, 20),
+        child: _listItem()
       ),
       onTap: (){}
     );
   }
 
-  Widget _listTile(){
-    return ListTile(
-      dense: false,
-      leading: Container( 
-        width: 55, 
-        height: 55, 
-        child: ProfileImage(image: this.widget.conversation.profileImage, size: 55),
-      ),
-      title: _nameText(),
-      subtitle: _messageText()
+  Widget _listItem(){
+    return Row(
+      children: [
+        ProfileImage(image: this.widget.conversation.profileImage, size: 55),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _nameText(),
+              Row(
+                children: [
+                  Expanded(child: _messageText()),
+                ],
+              )
+            ],
+          ),
+        )
+      ],
     );
   }
 

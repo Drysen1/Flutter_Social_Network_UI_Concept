@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_event.dart';
-import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_state.dart';
-import 'package:flutter_social_network_ui_concept/models/conversationModel.dart';
-import 'package:flutter_social_network_ui_concept/widgets/messages/conversationItem.dart';
+import 'package:flutter_social_network_ui_concept/widgets/messages/conversationListView.dart';
 
 class MessagesScreen extends StatefulWidget {
   const MessagesScreen({ Key? key }) : super(key: key);
@@ -26,33 +24,18 @@ class _MessagesScreenState extends State<MessagesScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scrollbar(
       controller: _scrollController,
       isAlwaysShown: false,
       showTrackOnHover: true,
-      child: _conversationsListView(),
+      child: Align(
+        alignment: Alignment.topCenter,
+        child: Container(
+          width: size.width > 700 ? 700 : double.infinity,
+          child: ConversationListView()
+        ),
+      ),
     );
   }
-
-  Widget _conversationsListView(){
-    return BlocBuilder<ConverationsBloc, ConversationsState>(
-      buildWhen: (oldState, newState){
-        return newState is ConversationsLoadedState;
-      },
-      builder: (context, state){
-        List<ConversationModel> conversations = [];
-        if(state is ConversationsLoadedState){
-          conversations = state.conversations;
-        }
-        return ListView.builder(
-          itemCount: conversations.length,
-          itemBuilder: (context, index){
-            return ConversationItem(conversation: conversations[index]);
-          }
-        );
-      }
-    );
-  }
-
-
 }

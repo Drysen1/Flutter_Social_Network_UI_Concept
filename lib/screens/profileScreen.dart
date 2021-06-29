@@ -26,10 +26,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return SafeArea(
-      child: Container(
-        padding: EdgeInsets.all(20),
-        child: _mainUI(),
+      child: Align(
+        alignment: Alignment.topCenter,
+        child: Container(
+          width: size.width > 700 ? 700 : double.infinity,
+          padding: EdgeInsets.all(20),
+          child: _mainUI(),
+        ),
       )
     );
   }
