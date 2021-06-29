@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/profile/profile_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/profile/profile_event.dart';
-import 'package:flutter_social_network_ui_concept/blocs/profile/profile_state.dart';
 import 'package:flutter_social_network_ui_concept/widgets/profile/informationText.dart';
 import 'package:flutter_social_network_ui_concept/widgets/profile/locationHolder.dart';
 import 'package:flutter_social_network_ui_concept/widgets/profile/sendMessageButton.dart';
 import 'package:flutter_social_network_ui_concept/widgets/profile/userProfileImage.dart';
 import 'package:flutter_social_network_ui_concept/widgets/profile/usernameText.dart';
-import 'package:flutter_social_network_ui_concept/widgets/profileImage.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ProfileScreen extends StatefulWidget {
   final int profileId;

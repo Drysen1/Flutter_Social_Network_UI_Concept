@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class SendMessageButton extends StatefulWidget {
   const SendMessageButton({ Key? key }) : super(key: key);
@@ -14,7 +15,7 @@ class _SendMessageButtonState extends State<SendMessageButton> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: Theme.of(context).primaryColor,
-        padding: EdgeInsets.all(10.0), 
+        padding: kIsWeb ? EdgeInsets.fromLTRB(10, 16, 0, 16) : EdgeInsets.all(10.0), 
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30)
         ),
