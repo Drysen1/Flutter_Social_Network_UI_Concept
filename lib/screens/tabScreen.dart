@@ -75,7 +75,7 @@ class _TabScreenState extends State<TabScreen> {
         ),
         BlocProvider(
           create: (context) => ProfileBloc(),
-          child: ProfileScreen()
+          child: ProfileScreen(profileId: 0,)
         ),
       ],
       onPageChanged: (int pageIndex){

@@ -1,8 +1,8 @@
 import 'package:flutter_social_network_ui_concept/models/profileModel.dart';
 
 class ProfileRepository {
-    var _janeDoe = ProfileModel(0, "Jane", "Doe", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "City, Country", 'assets/images/profileImage.png');
-    var _johnDoe = ProfileModel(0, "John", "Doe", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "City, Country", 'assets/images/profileImage.png');
+  var _janeDoe = ProfileModel(0, "Jane", "Doe", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "City, Country", 'assets/images/profileImage.png');
+  var _johnDoe = ProfileModel(0, "John", "Doe", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "City, Country", 'assets/images/profileImage.png');
 
   List<ProfileModel> getProfiles(){
     List<ProfileModel> profiles = [];
@@ -17,6 +17,11 @@ class ProfileRepository {
     } 
     
     return profiles;
+  }
+
+  ProfileModel getProfileById(int profileId){
+    var profiles = getProfiles();
+    return profiles.where((x) => x.id == profileId).first;
   }
 
   ProfileModel getMyProfile(){

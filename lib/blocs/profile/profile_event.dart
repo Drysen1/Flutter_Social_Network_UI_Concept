@@ -5,4 +5,7 @@ class ProfileEvent extends Equatable{
   List<Object?> get props => [];
 }
 
-class LoadProfileEvent extends ProfileEvent{}
+class LoadProfileEvent extends ProfileEvent{
+  final int profileId;
+  LoadProfileEvent(this.profileId);
+}
