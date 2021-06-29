@@ -40,7 +40,7 @@ class _ProfileGridCardState extends State<ProfileGridCard> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ProfileImage(image: this.widget.profile.image),
+        ProfileImage(image: this.widget.profile.image, size: 70),
         SizedBox(width: 20,),
         Expanded(
           child: _informationColumn()

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/home/home_bloc.dart';
+import 'package:flutter_social_network_ui_concept/blocs/profile/profile_bloc.dart';
 import 'package:flutter_social_network_ui_concept/screens/homeScreen.dart';
 import 'package:flutter_social_network_ui_concept/screens/messagesScreen.dart';
 import 'package:flutter_social_network_ui_concept/screens/profileScreen.dart';
@@ -68,9 +69,14 @@ class _TabScreenState extends State<TabScreen> {
           create: (context) => HomeBloc(),
           child: HomeScreen()
         ),
-        BlocProvider(create: (context) => ConverationsBloc(),
-        child: MessagesScreen()),
-        ProfileScreen()
+        BlocProvider(
+          create: (context) => ConverationsBloc(),
+          child: MessagesScreen()
+        ),
+        BlocProvider(
+          create: (context) => ProfileBloc(),
+          child: ProfileScreen()
+        ),
       ],
       onPageChanged: (int pageIndex){
         

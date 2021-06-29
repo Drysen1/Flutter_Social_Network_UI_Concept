@@ -31,7 +31,7 @@ class _ConversationItemState extends State<ConversationItem> {
       leading: Container( 
         width: 55, 
         height: 55, 
-        child: ProfileImage(image: this.widget.conversation.profileImage),
+        child: ProfileImage(image: this.widget.conversation.profileImage, size: 55),
       ),
       title: _nameText(),
       subtitle: _messageText()

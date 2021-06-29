@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProfileImage extends StatefulWidget {
+  final double size;
   final String image;
-  const ProfileImage({ Key? key, required this.image }) : super(key: key);
+  const ProfileImage({ Key? key, required this.image, required this.size }) : super(key: key);
 
   @override
   _ProfileImageState createState() => _ProfileImageState();
@@ -13,10 +14,10 @@ class _ProfileImageState extends State<ProfileImage> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(2),
-      width: 70,
-      height: 70,
+      width: this.widget.size,
+      height: this.widget.size,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(35),
+        borderRadius: BorderRadius.circular(this.widget.size / 2),
         color: Theme.of(context).primaryColor,
       ),
       child: _innerContainer(),
@@ -26,10 +27,10 @@ class _ProfileImageState extends State<ProfileImage> {
   Widget _innerContainer(){
     return Container(
       padding: EdgeInsets.all(4),
-      width: 68,
-      height: 68,
+      width: this.widget.size - 2,
+      height: this.widget.size - 2,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(35),
+        borderRadius: BorderRadius.circular(this.widget.size / 2),
         color: Color.fromARGB(255, 46, 46, 46),
       ),
       child: _roundImage()
@@ -38,7 +39,7 @@ class _ProfileImageState extends State<ProfileImage> {
 
   Widget _roundImage(){
     return ClipRRect(
-      borderRadius: BorderRadius.circular(35),
+      borderRadius: BorderRadius.circular(this.widget.size / 2),
       child: Image.asset(this.widget.image) 
     );
   }
