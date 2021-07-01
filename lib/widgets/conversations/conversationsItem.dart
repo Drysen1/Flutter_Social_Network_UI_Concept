@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_social_network_ui_concept/blocs/conversation/conversation_bloc.dart';
 import 'package:flutter_social_network_ui_concept/models/conversationModel.dart';
+import 'package:flutter_social_network_ui_concept/screens/conversationScreen.dart';
 import 'package:flutter_social_network_ui_concept/widgets/profileImage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ConversationItem extends StatefulWidget {
+class ConversationsItem extends StatefulWidget {
   final ConversationModel conversation;
-  const ConversationItem({ Key? key, required this.conversation }) : super(key: key);
+  const ConversationsItem({ Key? key, required this.conversation }) : super(key: key);
 
   @override
-  _ConversationItemState createState() => _ConversationItemState();
+  _ConversationsItemState createState() => _ConversationsItemState();
 }
 
-class _ConversationItemState extends State<ConversationItem> {
+class _ConversationsItemState extends State<ConversationsItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -21,7 +24,17 @@ class _ConversationItemState extends State<ConversationItem> {
         padding: EdgeInsets.fromLTRB(16, 20, 16, 20),
         child: _listItem()
       ),
-      onTap: (){}
+      onTap: (){
+         Navigator.of(context).push(
+          MaterialPageRoute(
+          builder: (BuildContext context) =>
+            BlocProvider(
+              create: (context) => ConversationBloc(),
+              child: ConversationScreen(conversationId: this.widget.conversation.id, username: this.widget.conversation.username, profileImage: this.widget.conversation.profileImage)
+            )
+          )
+        );       
+      }
     );
   }
 

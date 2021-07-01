@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_event.dart';
-import 'package:flutter_social_network_ui_concept/widgets/messages/conversationListView.dart';
+import 'package:flutter_social_network_ui_concept/widgets/conversations/conversationsListView.dart';
 
-class MessagesScreen extends StatefulWidget {
-  const MessagesScreen({ Key? key }) : super(key: key);
+class ConversationsScreen extends StatefulWidget {
+  const ConversationsScreen({ Key? key }) : super(key: key);
 
   @override
-  _MessagesScreenState createState() => _MessagesScreenState();
+  _ConversationsScreenState createState() => _ConversationsScreenState();
 }
 
-class _MessagesScreenState extends State<MessagesScreen> {
+class _ConversationsScreenState extends State<ConversationsScreen> {
   late ConverationsBloc _converationsBloc;
   late ScrollController _scrollController;
 
@@ -33,7 +33,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
         alignment: Alignment.topCenter,
         child: Container(
           width: size.width > 700 ? 700 : double.infinity,
-          child: ConversationListView()
+          child: ConversationsListView()
         ),
       ),
     );

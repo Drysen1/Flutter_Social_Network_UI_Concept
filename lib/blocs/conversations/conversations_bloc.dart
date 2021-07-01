@@ -4,11 +4,11 @@ import 'package:flutter_social_network_ui_concept/blocs/conversations/conversati
 import 'package:flutter_social_network_ui_concept/models/conversationModel.dart';
 import 'package:flutter_social_network_ui_concept/repository/conversationRepository.dart';
 
-class ConverationsBloc extends Bloc<ConversationEvent, ConversationsState>{
+class ConverationsBloc extends Bloc<ConversationsEvent, ConversationsState>{
   ConverationsBloc() : super(ConversationsInitialState());
 
   @override
-  Stream<ConversationsState> mapEventToState(ConversationEvent event) async* {
+  Stream<ConversationsState> mapEventToState(ConversationsEvent event) async* {
     if(event is LoadConversationEvent){
       yield* _mapLoadConversationEventToState();
     } 

@@ -3,16 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversations/conversations_state.dart';
 import 'package:flutter_social_network_ui_concept/models/conversationModel.dart';
-import 'package:flutter_social_network_ui_concept/widgets/messages/conversationItem.dart';
+import 'package:flutter_social_network_ui_concept/widgets/conversations/conversationsItem.dart';
 
-class ConversationListView extends StatefulWidget {
-  const ConversationListView({ Key? key }) : super(key: key);
+class ConversationsListView extends StatefulWidget {
+  const ConversationsListView({ Key? key }) : super(key: key);
 
   @override
-  _ConversationListViewState createState() => _ConversationListViewState();
+  _ConversationsListViewState createState() => _ConversationsListViewState();
 }
 
-class _ConversationListViewState extends State<ConversationListView> {
+class _ConversationsListViewState extends State<ConversationsListView> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ConverationsBloc, ConversationsState>(
@@ -27,7 +27,7 @@ class _ConversationListViewState extends State<ConversationListView> {
         return ListView.builder(
           itemCount: conversations.length,
           itemBuilder: (context, index){
-            return ConversationItem(conversation: conversations[index]);
+            return ConversationsItem(conversation: conversations[index]);
           }
         );
       }

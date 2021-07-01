@@ -35,7 +35,7 @@ class ConversationRepository {
 
     for( var i = 0 ; i < 20; i++ ) { 
       if(i % 2 == 0){
-        replies.add(_createReply(i, conversationId, 20, _janeDoe));
+        replies.add(_createReply(i, conversationId, 0, _janeDoe));
       } else {
         replies.add(_createReply(i, conversationId, 30, _johnDoe));
       }
