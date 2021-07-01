@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         backgroundColor: Color.fromARGB(255, 23, 23, 23),
         primaryColor: Color.fromARGB(255, 195, 165, 89),
+        primarySwatch: Colors.red,
       ),
       home: TabScreen(),
     );

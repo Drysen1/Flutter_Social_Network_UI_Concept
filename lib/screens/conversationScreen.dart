@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversation/conversation_bloc.dart';
 import 'package:flutter_social_network_ui_concept/blocs/conversation/conversation_event.dart';
 import 'package:flutter_social_network_ui_concept/widgets/conversation/conversationListView.dart';
+import 'package:flutter_social_network_ui_concept/widgets/conversation/sendMessageTextField.dart';
 import 'package:flutter_social_network_ui_concept/widgets/profileImage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -68,10 +69,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
           Expanded(
             child: ConversationListView()
           ),
-          Container(
-            height: 50,
-            color: Colors.red,
-          )
+          SendMessageTextField(),
         ],
       ),
     );

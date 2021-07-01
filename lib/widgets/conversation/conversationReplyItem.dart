@@ -40,7 +40,7 @@ class _ConversationReplyItemState extends State<ConversationReplyItem> {
       this.widget.reply.message,
       style: GoogleFonts.poppins(
         color: Colors.white70,
-        fontSize: 18
+        fontSize: 16
       ) 
     );
   }

@@ -23,6 +23,7 @@ class ConversationBloc extends Bloc<ConversationEvent, ConversationState>{
   }
 
   Stream<ConversationState> _mapSendMessageEventToState(SendMessageEvent event) async*{
+    //Here we would send message.
     yield MessageSentState();
   }
 
