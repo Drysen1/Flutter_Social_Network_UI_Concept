@@ -26,7 +26,8 @@ class _ConversationReplyItemState extends State<ConversationReplyItem> {
       child: Align(
         alignment: (this.widget.reply.userId == 0 ? Alignment.topRight : Alignment.topLeft),
         child: Container(
-          width: size.width > 800 ? 700 : double.infinity,
+          constraints: BoxConstraints(minWidth: 100, maxWidth: 700),
+          // width: size.width > 800 ? 700 : double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30),
