@@ -1,6 +1,6 @@
 # Flutter_Social_Network_UI_Concept
 
-An interactive UI example of a social network app using the BLoC pattern.
+An interactive UI example of a social network app using the BLoC pattern. The application has an adaptive layout and implements a bottombar on ipad/mobile and a topbar on the web.
 
 See an online example: <https://drysen1.github.io/flutter-web-examples/social-network-ui/#/>
 
