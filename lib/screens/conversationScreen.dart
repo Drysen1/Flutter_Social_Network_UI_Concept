@@ -63,14 +63,20 @@ class _ConversationScreenState extends State<ConversationScreen> {
   }
 
   Widget _mainUI(){
+    var size = MediaQuery.of(context).size;
     return SafeArea(
-      child: Column(
-        children: [
-          Expanded(
-            child: ConversationListView()
+      child: Center(
+        child: Container(
+          width: size.width > 1000 ? 1000 : double.infinity,
+          child: Column(
+            children: [
+              Expanded(
+                child: ConversationListView()
+              ),
+              SendMessageTextField(),
+            ],
           ),
-          SendMessageTextField(),
-        ],
+        ),
       ),
     );
   }
