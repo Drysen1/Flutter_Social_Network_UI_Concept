@@ -1,4 +1,16 @@
-# flutter_social_network_ui_concept
+# Flutter_Social_Network_UI_Concept
+
+An interactive UI example of a social network app using the BLoC pattern.
+
+See an online example: <https://drysen1.github.io/flutter-web-examples/social-network-ui/#/>
+
+![alt text](https://github.com/Drysen1/Flutter_Social_Network_UI_Concept/blob/main/screenshots/homescreen.png)
+
+![alt text](https://github.com/Drysen1/Flutter_Social_Network_UI_Concept/blob/main/screenshots/chatsreen00.png)
+
+![alt text](https://github.com/Drysen1/Flutter_Social_Network_UI_Concept/blob/main/screenshots/chatscreen01.png)
+
+![alt text](https://github.com/Drysen1/Flutter_Social_Network_UI_Concept/blob/main/screenshots/profilescreen.png)
 
 A new Flutter project.
 
